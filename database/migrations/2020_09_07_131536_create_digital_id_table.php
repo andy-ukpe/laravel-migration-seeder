@@ -15,6 +15,11 @@ class CreateDigitalIdTable extends Migration
     {
         Schema::create('digital_id', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('birthPlace');
+            $table->date('birthDate');
+            $table->string('sex');
+            $table->integer('nationalNumber');
             $table->timestamps();
         });
     }
