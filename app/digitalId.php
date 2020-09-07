@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class digitalId extends Model
+class DigitalId extends Model
 {
+  protected $table='digital_id';
     //Creating fillable areas
     protected $fillable = [
       'name',

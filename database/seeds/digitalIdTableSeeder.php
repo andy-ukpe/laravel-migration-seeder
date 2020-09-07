@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\digitalId;
+use App\DigitalId;
 use Faker\Generator as Faker;
 
-class digitalIdTableSeeder extends Seeder
+class DigitalIdTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,13 @@ class digitalIdTableSeeder extends Seeder
     public function run(Faker $faker)
     {
       for ($i=0; $i <5 ; $i++) {
-        $newDigitalId = new DigitalId ();
+        $newDigitalId = new DigitalId();
         $newDigitalId->name = $faker->name;
         $newDigitalId->birthPlace = $faker->city;
-        $newDigitalId->birthDate = $faker->dateTimeBetween($startDate = '-70 years', $endDate = '-16 years', $timezone = null);
-        $newDigitalId->sex = $faker->title($gender = null|'male'|'female');
-        $newDigitalId->nationalNumber = $faker->idNumber;
+        $newDigitalId->birthDate = $faker->dateTimeBetween('-70 years', '-16 years');
+        $newDigitalId->sex = $faker->title($gender = 'male'|'female');
+        $newDigitalId->nationalNumber = $faker->randomNumber(8);
+        $newDigitalId->save();
       }
     }
 }
