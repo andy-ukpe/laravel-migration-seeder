@@ -49,8 +49,8 @@ class DigitalIdController extends Controller
     public function show($id)
     {
       $singleId = DigitalId::find($id);
-      
-      return view('DigitalId.show', compact($singleId));
+
+      return view('DigitalId.show', compact('singleId'));
     }
 
     /**
